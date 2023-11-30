@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+ version="2.0">
+	<persistence-unit name="mssqlserver_pubs" transaction-type="RESOURCE_LOCAL">
+		<!-- Persistence provider -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!--  domain classes -->
+		<class>basics.Category</class>
+		<class>manytoone2.Category</class>
+		<class>manytoone2.Product</class>
+		<class>manytoone.Sales</class>
+		<class>manytoone.Product</class>
+		<class>composition.Customer</class>
+		<class>basics.Titles</class>
+		<class>basics.Publisher</class>
+		<class>manytoone.Titles</class>
+		<class>manytoone.Publisher</class>
+		<class>inheritance.ResidentalDoctor</class>
+		<class>inheritance.Consultant</class>
+		<class>inheritance.Doctor</class>
+		<class>relationships.Author</class>
+		<class>relationships.Title</class>
+		<class>relationships.Publisher</class>
+		
+		
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:sqlserver://localhost:1433;database = pubs;user=sa;password=YourStrong@Passw0rd;database= pubs;encrypt=true;trustServerCertificate=true" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="YourStrong@Passw0rd" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.SQLServer2012Dialect" />
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+<persistence-unit name="mssqlserver_pubs_ddl" transaction-type="RESOURCE_LOCAL">
+		<!-- Persistence provider -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!--  domain classes -->
+	
+		
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:sqlserver://localhost:1433;database = pubs;user=sa;password=YourStrong@Passw0rd;database= pubs;encrypt=true;trustServerCertificate=true" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="YourStrong@Passw0rd" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.SQLServer2012Dialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+	<persistence-unit name="mssqlserver_pubs_query" transaction-type="RESOURCE_LOCAL">
+		<!-- Persistence provider -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<!--  domain classes -->
+	
+		<class>queries.Author</class>
+		<class>queries.Publisher</class>
+		<class>queries.Title</class>
+		<class>queries.Product</class>
+		<class>queries.Sales</class>
+		<class>queries.Category</class>
+		
+		
+		
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:sqlserver://localhost:1433;database = pubs;user=sa;password=YourStrong@Passw0rd;database= pubs;encrypt=true;trustServerCertificate=true" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="YourStrong@Passw0rd" />
+			<property name="hibernate.dialect"
+				value="org.hibernate.dialect.SQLServer2012Dialect" />
+			<property name="hibernate.hbm2ddl.auto" value="none" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+		</properties>
+	</persistence-unit>
+	 
+ 
+
+	 
+
+</persistence>
